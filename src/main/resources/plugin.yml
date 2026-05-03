@@ -4,6 +4,7 @@ version: '${project.version}'
 depend:
   - packetevents
 softdepend:
+  # Protection
   - WorldGuard
   - Towny
   - Dominion
@@ -15,19 +16,32 @@ softdepend:
   - HuskTowns
   - HuskClaims
   - SuperiorSkyblock2
+  # Economy
+  - Vault
+  - PlayerPoints
+  - UltraEconomy
+  - CoinsEngine
+  - ExcellentEconomy
+  - RedisEconomy
+  - RoyaleEconomy
+  - EcoBits
+  - PEconomy
+  - VotingPlugin
+  # Item
+  - MMOItems
   - ItemsAdder
   - Oraxen
-  - MythicMobs
-  - eco
-  - MMOItems
-  - PlaceholderAPI
-  - BetterStructures
-  - NeigeItems
+  - Nexo
   - EcoItems
   - EcoArmor
+  - MythicMobs
   - ExecutableItems
-  - NBTAPI
   - CraftEngine
+  - NeigeItems
+  - eco
+  # Others
+  - NBTAPI
+  - BetterStructures
 
 main: cn.myrealm.customarcheology.CustomArcheology
 api-version: '1.20'

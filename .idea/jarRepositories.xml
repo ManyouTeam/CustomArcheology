@@ -67,6 +67,11 @@
       <option name="url" value="https://mvn.lumine.io/repository/maven-public/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="gtemc-repo" />
+      <option name="name" value="gtemc-repo" />
+      <option name="url" value="https://repo.gtemc.net/releases/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="paper-repo" />
       <option name="name" value="paper-repo" />
       <option name="url" value="https://repo.papermc.io/repository/maven-public/" />
@@ -100,6 +105,11 @@
       <option name="id" value="bg-repo" />
       <option name="name" value="bg-repo" />
       <option name="url" value="https://repo.bg-software.com/repository/api/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="momirealms repo" />
+      <option name="name" value="momirealms repo" />
+      <option name="url" value="https://repo.momirealms.net/snapshots" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="codemc-releases" />

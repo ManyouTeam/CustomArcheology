@@ -211,7 +211,7 @@ public class ArcheologyBlock {
     public Structure getStructure() {
         String structureName = Keys.STRUCTURE_TYPE.asString(config);
         if (Objects.nonNull(structureName)) {
-            return Registry.STRUCTURE.get(NamespacedKey.minecraft(structureName));
+            return Registry.STRUCTURE.get(CommonUtil.parseNamespacedKey(structureName));
         }
         return null;
     }
