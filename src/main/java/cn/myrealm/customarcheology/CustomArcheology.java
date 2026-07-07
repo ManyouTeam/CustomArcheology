@@ -32,11 +32,18 @@ import java.util.Random;
 public final class CustomArcheology extends JavaPlugin {
 
     public static CustomArcheology plugin;
+
     private final List<BaseManager> managers = new ArrayList<>();
+
     public static final Random RANDOM = new Random();
+
     public static boolean canUseStructure = false;
-    public static int majorVersion = 0;
-    public static int miniorVersion = 0;
+
+    public static int yearVersion;
+
+    public static int majorVersion;
+
+    public static int minorVersion;
 
     @Override
     public void onEnable() {
@@ -44,12 +51,12 @@ public final class CustomArcheology extends JavaPlugin {
 
         try {
             String[] versionParts = Bukkit.getBukkitVersion().split("-")[0].split("\\.");
-            majorVersion = versionParts.length > 1 ? Integer.parseInt(versionParts[1]) : 0;
-            miniorVersion = versionParts.length > 2 ? Integer.parseInt(versionParts[2]) : 0;
+            yearVersion = versionParts.length > 0 && versionParts[0].matches("\\d+") ? Integer.parseInt(versionParts[0]) : 1;
+            majorVersion = versionParts.length > 1 && versionParts[1].matches("\\d+") ? Integer.parseInt(versionParts[1]) : 0;
+            minorVersion = versionParts.length > 2 && versionParts[2].matches("\\d+") ? Integer.parseInt(versionParts[2]) : 0;
         } catch (Throwable throwable) {
             Bukkit.getConsoleSender().sendMessage("§x§9§8§F§B§9§8[CustomArcheology] §cError: Can not get your Minecraft version! Default set to 1.0.0.");
         }
-
         outputDefaultFiles();
 
         initPlugin();
@@ -64,7 +71,7 @@ public final class CustomArcheology extends JavaPlugin {
             Bukkit.getConsoleSender().sendMessage("§x§9§8§F§B§9§8[CustomArcheology] §6Warning: Can not register structure type generate method" +
                     " in this server. Try to update your server core jar to LATEST 1.20.4 or Minecraft 1.20.4 newer version to fix.");
         }
-        Bukkit.getConsoleSender().sendMessage("§x§9§8§F§B§9§8[CustomArcheology] §fYour Minecraft version is: 1." + majorVersion + "." + miniorVersion + "!");
+        Bukkit.getConsoleSender().sendMessage("§x§9§8§F§B§9§8[CustomArcheology] §fYour server version is: " + yearVersion + "." + majorVersion + "." + minorVersion + "!");
         Bukkit.getConsoleSender().sendMessage(Messages.ENABLE_MESSAGE.getMessageWithPrefix());
     }
 

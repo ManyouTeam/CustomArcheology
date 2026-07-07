@@ -57,7 +57,7 @@ public class LocateManager extends BaseManager {
             return;
         }
         Bukkit.getConsoleSender().sendMessage("§x§9§8§F§B§9§8[CustomArcheology] §fDownloading Minecraft locate file, this will cost some time...");
-        String MINECRAFT_VERSION = "1." + CustomArcheology.majorVersion + "." + CustomArcheology.miniorVersion;
+        String MINECRAFT_VERSION = CustomArcheology.yearVersion +  "." + CustomArcheology.majorVersion + "." + CustomArcheology.minorVersion;
         if (MINECRAFT_VERSION.endsWith(".0")) {
             MINECRAFT_VERSION = MINECRAFT_VERSION.substring(0, MINECRAFT_VERSION.length() -2);
         }

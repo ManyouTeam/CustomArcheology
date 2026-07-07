@@ -171,13 +171,17 @@ public class CommonUtil {
         return text;
     }
 
+    public static boolean getYearVersion(int year, int majorVersion, int minorVersion) {
+        return CustomArcheology.yearVersion > year || (CustomArcheology.yearVersion == year && CustomArcheology.majorVersion >= majorVersion && CustomArcheology.minorVersion >= minorVersion);
+    }
+
     public static boolean getMajorVersion(int version) {
-        return CustomArcheology.majorVersion >= version;
+        return CustomArcheology.yearVersion > 1 || CustomArcheology.majorVersion >= version;
     }
 
     public static boolean getMinorVersion(int majorVersion, int minorVersion) {
-        return CustomArcheology.majorVersion > majorVersion || (CustomArcheology.majorVersion == majorVersion &&
-                CustomArcheology.miniorVersion >= minorVersion);
+        return CustomArcheology.yearVersion > 1 || CustomArcheology.majorVersion > majorVersion || (CustomArcheology.majorVersion == majorVersion &&
+                CustomArcheology.minorVersion >= minorVersion);
     }
 
     public static NamespacedKey parseNamespacedKey(String key) {
